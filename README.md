@@ -35,12 +35,13 @@ git clone https://github.com/hakynbayo/snaarp-todo-app.git
 
 # Install dependencies
 
+```bash
 npm install
-or
+# or
 yarn
-or
+# or
 pnpm install
-or
+# or
 bun
 
 # Run the development server:
