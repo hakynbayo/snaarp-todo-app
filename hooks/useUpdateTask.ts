@@ -7,6 +7,7 @@ export const useUpdateTask = () => {
 
   return useMutation({
     mutationFn: async (updatedTask: Task) => {
+      // Update the task in storage
       const tasks = getTasks();
       const updatedTasks = tasks.map((task) =>
         task.id === updatedTask.id
@@ -21,30 +22,28 @@ export const useUpdateTask = () => {
     },
 
     onMutate: async (updatedTask) => {
-      // Cancel any outgoing refetches
+      // Pause ongoing fetches and save the current state
       await queryClient.cancelQueries({ queryKey: ["tasks"] });
-
-      // capture the previous value
       const previousTasks = queryClient.getQueryData<Task[]>(["tasks"]) || [];
 
-      // Update to the new value
+      // update the task list
       queryClient.setQueryData<Task[]>(["tasks"], (oldTasks = []) =>
         oldTasks.map((task) =>
           task.id === updatedTask.id ? updatedTask : task
         )
       );
 
-      // Return a context object with the captured value
+      // Return the previous state for rollback if needed
       return { previousTasks };
     },
 
     onError: (err, updatedTask, context) => {
-      // Rollback to the previous value if mutation fails
+      // Goback to the previous state if the update fails
       queryClient.setQueryData(["tasks"], context?.previousTasks);
     },
 
     onSettled: () => {
-      // Always refetch after error or success
+      // Refresh the task list after success or failure
       queryClient.invalidateQueries({ queryKey: ["tasks"] });
     },
   });

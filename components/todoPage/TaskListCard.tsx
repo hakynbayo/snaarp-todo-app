@@ -11,14 +11,14 @@ interface TaskListCardProps {
 
 export function TaskListCard({ filter, taskSummary }: TaskListCardProps) {
     return (
-        <Card>
+        <Card className="overflow-hidden max-w-full">
             <CardHeader className="flex items-center justify-between space-y-0 pb-2">
                 <CardTitle className="text-lg">Your Tasks</CardTitle>
             </CardHeader>
             <CardContent className="p-0">
                 <TaskList filter={filter} />
             </CardContent>
-            <CardFooter>
+            <CardFooter className="flex flex-wrap">
                 <span className="text-xs font-medium text-foreground">Tasks Summary:</span>
                 <span className="text-xs pl-2 text-muted-foreground">{taskSummary}</span>
             </CardFooter>

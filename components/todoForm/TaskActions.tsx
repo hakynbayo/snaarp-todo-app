@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { Trash2, Pencil, Save, X } from 'lucide-react';
-import { ConfirmDelete } from './ConfirmDelete';
+import { ConfirmDelete } from './ConfirmDeleteModal';
 
 export function TaskActions({
   isEditing,

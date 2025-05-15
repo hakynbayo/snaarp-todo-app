@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Task } from '@/types/task';
 import { useUpdateTask } from '@/hooks/useUpdateTask';
 import { useDeleteTask } from '@/hooks/useDeleteTask';
-import { TaskEditForm } from '@/components/todoForm/TaskEditForm';
+import { TaskEditForm } from '@/components/todoForm/EditTaskForm';
 import { TaskView } from '@/components/todoPage/TaskView';
 import { TaskActions } from '@/components/todoForm/TaskActions';
 import { Input } from '../ui/input';
@@ -44,7 +44,7 @@ export default function TaskItem({ task, isLoading }: { task: Task; isLoading?: 
     }
 
     return (
-        <li className="flex items-center justify-between p-3 border-y">
+        <li className="flex flex-col sm:flex-row sm:items-center justify-between p-3 border-y">
             <div className="px-4 flex items-center space-x-3 flex-1 rounded-lg border border-gray-200 hover:bg-gray-200 transition-colors">
                 <Input
                     type="checkbox"
@@ -63,14 +63,16 @@ export default function TaskItem({ task, isLoading }: { task: Task; isLoading?: 
                     <TaskView task={task} />
                 )}
             </div>
+            <div className='flex justify-end sm:items-center'>
+                <TaskActions
+                    isEditing={isEditing}
+                    onEdit={startEditing}
+                    onSave={saveChanges}
+                    onCancel={cancelEditing}
+                    onDelete={handleDelete}
+                />
+            </div>
 
-            <TaskActions
-                isEditing={isEditing}
-                onEdit={startEditing}
-                onSave={saveChanges}
-                onCancel={cancelEditing}
-                onDelete={handleDelete}
-            />
         </li>
     );
 }

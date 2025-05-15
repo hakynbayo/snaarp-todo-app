@@ -17,15 +17,8 @@ import { Textarea } from '@/components/ui/textarea';
 import { Loader2, Plus } from 'lucide-react';
 import * as z from 'zod';
 import { useState } from 'react'; // Added imports
+import { taskFormSchema } from '@/lib/validation';
 
-const formSchema = z.object({
-    title: z.string()
-        .min(1, { message: 'Title is required' })
-        .max(100, { message: 'Title must be less than 100 characters' }),
-    description: z.string()
-        .max(500, { message: 'Description must be less than 500 characters' })
-        .optional(),
-});
 
 type TaskFormProps = {
     onSuccess?: () => void;
@@ -33,8 +26,8 @@ type TaskFormProps = {
 };
 
 export default function TaskForm({ onSuccess, className }: TaskFormProps) {
-    const form = useForm<z.infer<typeof formSchema>>({
-        resolver: zodResolver(formSchema),
+    const form = useForm<z.infer<typeof taskFormSchema>>({
+        resolver: zodResolver(taskFormSchema),
         defaultValues: {
             title: '',
             description: '',
@@ -44,7 +37,7 @@ export default function TaskForm({ onSuccess, className }: TaskFormProps) {
     const addMutation = useAddTask();
     const [isSubmitting, setIsSubmitting] = useState(false); // New state for delay
 
-    const onSubmit = (values: z.infer<typeof formSchema>) => {
+    const onSubmit = (values: z.infer<typeof taskFormSchema>) => {
         setIsSubmitting(true);
 
         // Add 3-second delay before submitting
