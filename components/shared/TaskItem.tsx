@@ -3,7 +3,7 @@ import { Task } from '@/types/task';
 import { useUpdateTask } from '@/hooks/useUpdateTask';
 import { useDeleteTask } from '@/hooks/useDeleteTask';
 import { TaskEditForm } from '@/components/todoForm/EditTaskForm';
-import { TaskView } from '@/components/todoPage/TaskView';
+import { TaskView } from '@/components/shared/TaskView';
 import { TaskActions } from '@/components/todoForm/TaskActions';
 import { Input } from '../ui/input';
 import { Loading } from '../LoadingState';
