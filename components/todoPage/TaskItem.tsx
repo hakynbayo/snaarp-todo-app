@@ -2,9 +2,9 @@ import { useState } from 'react';
 import { Task } from '@/types/task';
 import { useUpdateTask } from '@/hooks/useUpdateTask';
 import { useDeleteTask } from '@/hooks/useDeleteTask';
-import { TaskEditForm } from '@/components/tasks/TaskEditForm';
-import { TaskView } from '@/components/tasks/TaskView';
-import { TaskActions } from '@/components/tasks/TaskActions';
+import { TaskEditForm } from '@/components/todoForm/TaskEditForm';
+import { TaskView } from '@/components/todoPage/TaskView';
+import { TaskActions } from '@/components/todoForm/TaskActions';
 import { Input } from '../ui/input';
 import { Loading } from '../LoadingState';
 

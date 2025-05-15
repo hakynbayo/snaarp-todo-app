@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Plus } from 'lucide-react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { DialogTrigger } from '@radix-ui/react-dialog';
-import TaskForm from '@/components/tasks/TaskForm';
+import TaskForm from '@/components/todoForm/TaskAddForm';
 
 interface AddTaskButtonProps {
     isOpen: boolean;

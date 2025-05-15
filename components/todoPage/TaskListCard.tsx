@@ -1,7 +1,7 @@
 'use client';
 
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import TaskList from '@/components/tasks/TaskList';
+import TaskList from '@/components/todoPage/TaskList';
 import { TaskFilter as FilterType } from '@/types/task';
 
 interface TaskListCardProps {
