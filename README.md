@@ -31,7 +31,7 @@ A minimalist task management application with subtle animations for enhanced use
 
 # Clone repository
 
-git clone https://github.com/yourusername/taskflow.git
+git clone https://github.com/hakynbayo/snaarp-todo-app.git
 
 # Install dependencies
 
