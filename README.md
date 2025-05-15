@@ -1,6 +1,6 @@
-# Snaarp Task Manager
+# Snaarp ToDo App
 
-A minimalist task management application with subtle animations for enhanced user experience. Built with Next, Shadcn and TypeScript.
+A minimalist Todo application to manage task with subtle animations for enhanced user experience. Built with NextJs, TailwindCSS and TypeScript.
 
 ## Features
 
@@ -24,7 +24,7 @@ A minimalist task management application with subtle animations for enhanced use
 
 - Edit tasks.
 - Shadcn components.
-- Display task summary.
+- Task summary displayed.
 - Responsive design.
 
 ## Setup Instructions
