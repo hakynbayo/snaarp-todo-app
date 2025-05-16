@@ -24,7 +24,7 @@ export function TaskFilter({ filter, setFilter }: TaskFilterProps) {
                 </SelectItem>
                 <SelectItem value="active">
                     <div className="flex items-center gap-2">
-                        <Circle className="h-4 w-4 text-blue-500" />
+                        <Circle className="h-4 w-4 text-red-500" />
                         <span>Active</span>
                     </div>
                 </SelectItem>
