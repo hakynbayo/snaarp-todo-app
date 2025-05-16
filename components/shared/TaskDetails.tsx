@@ -1,6 +1,6 @@
 import { Task } from '@/types/task';
 
-export function TaskView({ task }: { task: Task }) {
+export function TaskDetails({ task }: { task: Task }) {
     return (
         <div className="flex-1 space-y-2 p-3 relative">
 
@@ -22,6 +22,7 @@ export function TaskView({ task }: { task: Task }) {
                     }`}>
                     {task.title}
                 </h3>
+
                 <span
                     className={`text-xs px-2 py-1 rounded-full ${task.completed
                         ? 'bg-green-100 text-green-800'
@@ -32,12 +33,10 @@ export function TaskView({ task }: { task: Task }) {
                 </span>
             </div>
 
-
-
             {/* Description (if exists) */}
             {task.description && (
                 <div className="group relative">
-                    {/* Main truncated view */}
+                    {/* Main truncated description */}
                     <p className="text-xs text-gray-600 mt-2 p-2 bg-gray-50 rounded w-40 sm:w-48 truncate peer cursor-default">
                         {task.description}
                     </p>
@@ -51,10 +50,6 @@ export function TaskView({ task }: { task: Task }) {
                     </div>
                 </div>
             )}
-
-
-
-
         </div>
     );
 }

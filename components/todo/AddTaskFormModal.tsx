@@ -25,7 +25,7 @@ type TaskFormProps = {
     className?: string;
 };
 
-export default function TaskForm({ onSuccess, className }: TaskFormProps) {
+export default function AddTaskFormModal({ onSuccess, className }: TaskFormProps) {
     const form = useForm<z.infer<typeof taskFormSchema>>({
         resolver: zodResolver(taskFormSchema),
         defaultValues: {

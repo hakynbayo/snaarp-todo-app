@@ -3,9 +3,9 @@
 import { useState } from 'react';
 import { TaskFilter as FilterType } from '@/types/task';
 import { useTasks } from '@/hooks/useTasks';
-import { AddTaskButton } from '@/components/shared/AddTaskButton';
-import { TaskListCard } from '@/components/shared/TaskListCard';
+import { TasksCard } from '@/components/todo/TasksCard';
 import { TaskFilter } from '@/components/shared/TaskFilter';
+import { AddTaskButton } from '@/components/todo/AddTaskButton';
 
 export default function TodoPage() {
   const [filter, setFilter] = useState<FilterType>('all');
@@ -30,9 +30,7 @@ export default function TodoPage() {
       </div>
 
       {/* Task List in Card */}
-      <TaskListCard filter={filter} taskSummary={taskSummary} />
-
-
+      <TasksCard filter={filter} taskSummary={taskSummary} />
     </main>
   );
 }

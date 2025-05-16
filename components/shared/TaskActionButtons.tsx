@@ -2,7 +2,7 @@ import { Button } from '@/components/ui/button';
 import { Trash2, Pencil, Save, X } from 'lucide-react';
 import { ConfirmDelete } from './ConfirmDeleteModal';
 
-export function TaskActions({
+export function TaskActionButtons({
   isEditing,
   onEdit,
   onSave,
@@ -14,8 +14,10 @@ export function TaskActions({
   onSave: () => void;
   onCancel: () => void;
   onDelete: () => void;
+  disabled?: boolean;
 }) {
   return (
+    // Render a container for task action buttons for editing and deleting tasks
     <div className="flex space-x-2 ml-4">
       {isEditing ? (
         <>

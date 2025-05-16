@@ -15,7 +15,7 @@ A minimalist task management application with subtle animations for enhanced use
 | ---------------- | ---------------------- |
 | Core             | Next 15, TypeScript    |
 | Styling          | TailwindCSS            |
-| Animations       | CSS Transitions        |
+| Animations       | Framer motion          |
 | State Management | TanStack (React Query) |
 | UI Components    | Shadcn                 |
 | Validation       | Zod                    |
@@ -26,6 +26,7 @@ A minimalist task management application with subtle animations for enhanced use
 - Shadcn components.
 - Display task summary.
 - Responsive design.
+- Smooth animations deleting and editing tasks.
 
 ## Setup Instructions
 

@@ -1,7 +1,7 @@
 import { Input } from '@/components/ui/input';
 import { Task } from '@/types/task';
 
-export function TaskEditForm({
+export function EditTaskForm({
     task,
     onTaskChange,
 }: {
