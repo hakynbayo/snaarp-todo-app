@@ -26,7 +26,7 @@ A minimalist Todo application to manage task with subtle animations for enhanced
 - Shadcn components.
 - Task summary displayed.
 - Responsive design.
-- Smooth animations deleting and editing tasks.
+- Smooth animations on deleting and editing tasks.
 
 ## Setup Instructions
 
@@ -36,7 +36,7 @@ git clone https://github.com/hakynbayo/snaarp-todo-app.git
 
 # Install dependencies
 
-```bash
+````bash
 npm install
 # or
 yarn
@@ -55,6 +55,6 @@ yarn dev
 pnpm dev
 # or
 bun dev
-```
+````
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
